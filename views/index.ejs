@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <link href="//db.onlinewebfonts.com/c/f21923cb0f60b46d41a66875255790b3?family=NHaasGroteskDSPro-65Md"
+        rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="public/assests/style.css" rel="stylesheet" type="text/css">
+  
+
+    <script type="text/javascript">
+               function AutoReferesh(t){
+            setTimeout("location.reload(true)", t);
+        }
+    </script>
+
+</head>
+<body class="bg-image" onload="Javascript:AutoReferesh(60000)" background="https://www.frebers.com/wp-content/uploads/2020/08/Vector-black-abstract-background-free-vector-download-01-scaled.jpg">
+    <nav class="navbar">
+        <div class="container">
+            <div id="mainBox" onclick="openFunction()">&#9776;Options</div>
+            <div id="menu" class="sidemenu">
+                <a href="public/assests/homepage/index.html">Home</a>
+                <a href="public/assests/learning/learning.html">Learning</a>
+                <a href="../">Dashboard</a>
+                <a href="public/assests/news/index.html">News</a>
+                <a href="public/assests/about/about.html">About us</a>
+                <a href="public/assests/contribute/ourteam.html">Contribute</a>
+                <a href="#" class="closeBtn" onclick="closeFunction()">&#x2715;</a>
+            </div>
+
+            <script type="text/javascript">
+                function openFunction() {
+                    document.getElementById('menu').style.width = '200px';
+                    document.getElementById("mainBox").style.marginRight = "200px";
+                    document.getElementById("mainBox").innerHTML = "&#x2715; Close";
+
+                }
+                function closeFunction() {
+                    document.getElementById("menu").style.width = "0px";
+                    document.getElementById("mainBox").style.marginRight = "0px";
+                    document.getElementById("mainBox").innerHTML = "&#9776; Open";
+                }
+            </script>
+        </div>
+        <form method="post">
+            <select class="form" name='selectCoin' onchange='this.form.submit()'>
+                <option value="">Select Coin</option>
+                <option value="avalanche-2">Avalanche (AVAX)</option>
+                <option value="binancecoin">Binance (BNB)</option>
+                <option value="bitcoin">Bitcoin (BTC) </option>
+                <option value="cardano">Cardano (ADA)</option>
+                <option value="decentraland">Decentraland (MANA)</option>
+                <option value="dogecoin">Dogecoin (DOGE)</option>
+                <option value="ethereum">Ethereum (ETH)</option>
+                <option value="ripple">Ripple (XRP)</option>
+                <option value="solana">Solana (SOL)</option>
+                <option value="tether">Tether (USDT)</option>
+                <option value="shiba-inu">Shiba Inu (SHIB)</option>
+
+            </select>
+        </form>
+        <a class="brand" href="#">CryptoDash</a>
+
+        </div>
+    </nav>
+    <div class="coinName">
+        <%- mData.name %>
+    </div>
+
+
+    <section class="market-cards">
+
+        <div class="card">
+            <h6 class="card-title">Market Cap
+                24Hrs</h6>
+            <p class="card-text">
+                <%- mData.market_data.market_cap_change_percentage_24h %> %
+            </p>
+        </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">All Time
+                    High</h6>
+                <p class="card-text">
+                    $ <%- mData.market_data.ath.usd %>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">All Time Low
+                </h6>
+                <p class="card-text">
+                    $ <%- mData.market_data.atl.usd %>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Positive
+                    Sentiments </h6>
+                <p class="card-text">
+                    <%- mData.sentiment_votes_up_percentage %> %
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h6 class="card-title"> High 24Hrs
+            </h6>
+            <p class="card-high">
+                $ <%- mData.market_data.high_24h["usd"] %>
+            </p>
+        </div>
+        </div>
+        <div class="card">
+            <h6 class="card-title"> Low 24Hrs
+            </h6>
+            <p class="card-low">
+                $ <%- mData.market_data.low_24h["usd"] %>
+            </p>
+        </div>
+        </div>
+        <div>
+    </section>
+
+
+    <div class="market-price"> Current Price</div>
+    <div class="price">
+        $<%- mData.market_data.current_price.usd %>
+    </div>
+    </div>
+    
+    <div class="container">
+        <div class="col" id="chart1">
+        </div>
+        <div class="col" style="max-width:200px;">
+
+            <div class="card-body">
+                <h6 class="card-title"> Market Cap </h6>
+                <p class="card-text">
+                    $ <%- mData.market_data.market_cap.usd %>
+                </p>
+            </div>
+
+            <div class="card-body">
+                <h6 class="card-title"> Price Change 24hrs </h6>
+                <p class="card-text">
+                    $ <%- mData.market_data.price_change_24h_in_currency.usd %>
+                </p>
+            </div>
+
+            <div class="card-body">
+                <h6 class="card-title"> Total Volume </h6>
+                <p class="card-text">
+                    $ <%- mData.market_data.total_volume.usd %>
+                </p>
+            </div>
+
+            <div class="card-body">
+                <h6 class="card-title""> Circulating Supply</h6>
+                        <p class=" card-text">
+                    <%- mData.market_data["circulating_supply"] %>
+                        </p>
+            </div>
+
+            <div class="card-body">
+                <h6 class="card-title"> Twitter Followers</h6>
+                <p class="card-text">
+                    <%= mData.community_data.twitter_followers %>
+                </p>
+            </div>
+
+
+
+
+        </div>
+        <div class="col">
+
+            <div id="chart2"></div>
+            <div id="chart3"></div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+    <!-- Prices -->
+    <script>
+        let mPriceData = '<%- JSON.stringify(mChart.prices) %>'
+        mPriceData = String(mPriceData)
+        mPriceData = JSON.parse(mPriceData)
+        var options = {
+            chart: {
+                height: 400,
+                width: 600,
+                type: 'area'
+            },
+            grid: {
+                show: false
+            },
+            title: {
+                text: "Market Price (USD)",
+                style: {
+                    fontSize: '18px',
+                    fontWeight: 'bold',
+                    color: '#00ffea'
+                }
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            series: [{
+                name: 'Market Price',
+                data: mPriceData
+            }
+            ],
+            xaxis: {
+                type: "datetime"
+            },
+            dataLabels: {
+                enabled: false
+            },
+            yaxis: {
+                show: false
+            },
+            colors: ["#00ffea", "#00ffea"],
+            tooltip: {
+                y: {
+                    formatter: (value) => { return value.toFixed(2) }
+                },
+                theme: "dark"
+            }
+        }
+        var chart = new ApexCharts(document.querySelector("#chart1"), options);
+        chart.render();
+    </script>
+
+    <!-- Market cap based data -->
+    <script>
+        let mCapData = '<%- JSON.stringify(mChart.market_caps) %>'
+        mCapData = String(mCapData)
+        mCapData = JSON.parse(mCapData)
+        var options = {
+            chart: {
+                height: 200,
+                width: 300,
+                type: 'line'
+            },
+            grid: {
+                show: false
+            },
+            theme: {
+                mode: 'dark'
+            },
+            series: [{
+                name: 'Market Cap (USD)',
+                data: mCapData,
+            }
+            ],
+
+            xaxis: {
+                type: "datetime"
+            }, dataLabels: {
+                enabled: false
+            },
+            theme: {
+                mode: 'light',
+                palette: 'palette1',
+                monochrome: {
+                    enabled: false,
+                    color: '#255aee',
+                    shadeTo: 'light',
+                    shadeIntensity: 0.65,
+
+                },
+            }
+            ,
+            title: {
+                text: "Market Cap (USD)",
+                style: {
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#ff69f5'
+                }
+            },
+            yaxis: [{
+                show: false,
+            }
+            ],
+            colors: ["#ff69f5"],
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return val
+                    }
+                },
+                theme: "dark"
+            }
+        }
+        var chart = new ApexCharts(document.querySelector("#chart2"), options);
+        chart.render();
+    </script>
+
+    <!-- Market volume based data -->
+    <script>
+        let mVolData = '<%- JSON.stringify(mChart.total_volumes) %>'
+        mVolData = String(mVolData)
+        mVolData = JSON.parse(mVolData)
+        var options = {
+            chart: {
+                height: 200,
+                width: 300,
+                type: 'line'
+            },
+            theme: {
+                mode: 'dark'
+            },
+            grid: {
+                show: false
+            },
+            title: {
+                text: "Market Volume",
+                style: {
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#ffff00'
+                }
+            },
+            series: [{
+                name: 'Market Volume',
+                data: mVolData,
+            }
+            ],
+            xaxis: {
+                type: "datetime"
+            },
+            dataLabels: {
+                enabled: false
+            },
+            yaxis: [{
+                show: false,
+            }
+            ],
+            theme: {
+                mode: 'light',
+                palette: 'palette1',
+                monochrome: {
+                    enabled: false,
+                    color: '#ffffff',
+                    shadeTo: 'light',
+                    shadeIntensity: 0.65
+                }
+            },
+            colors: ["#D32D41"],
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return val
+                    }
+                },
+                theme: "dark"
+            }
+        }
+        var chart = new ApexCharts(document.querySelector("#chart3"), options);
+        chart.render();
+    </script>
+
+</body>
+
+</html>
