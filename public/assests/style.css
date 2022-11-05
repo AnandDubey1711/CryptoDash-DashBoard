@@ -1,0 +1,230 @@
+ /*Navbar styling */
+ body {
+     font-family: sans-serif;
+     margin: 10px 30px;
+ }
+
+
+ #mainBox {
+     font-size: 25px;
+     cursor: pointer;
+     transition: all .6s;
+     margin-top: 14px;
+     font-weight: bold;
+ }
+
+ .sidemenu {
+     position: fixed;
+     top: 0px;
+     left: 0px;
+     height: 100%;
+     width: 0px;
+     background-color: rgb(14, 12, 13);
+     z-index: 1;
+     padding-top: 100px;
+     overflow-x: hidden;
+     transition: all 0.5s;
+ }
+
+ .sidemenu a {
+     padding: 8px 8px 8px 48px;
+     text-decoration: none;
+     font-size: 26px;
+     font-weight: bold;
+     color: burlywood;
+     display: block;
+     font-weight: bold;
+     margin-top: 18px;
+ }
+
+ .sidemenu a:hover {
+     color: aqua;
+ }
+
+ .sidemenu .closeBtn {
+     position: absolute;
+     top: 0px;
+     right: 25px;
+     font-size: 36px;
+     margin-left: 32px;
+ }
+
+ .bg-image{
+   
+    filter:contrast(80%);
+    flood-opacity: 100%;
+    filter:sepia(10%);
+    filter:saturate(100%);
+    
+ }
+ .vid {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: 0.2s linear;
+     opacity: 0.8;
+ }
+
+ .navbar {
+     background: #a0e1ec;
+     width: 100%;
+     display: inline-flex;
+     justify-content: space-between;
+     padding-left: 13px;
+ }
+
+ .navbar .brand {
+     margin-right: 43%;
+     font-size: 3rem;
+     color: orangered;
+     font-family: initial;
+     font-weight: bolder;
+     text-transform: capitalize;
+     text-decoration: none;
+ }
+
+ .navbar .form {
+     width: 12.5rem;
+     justify-content: space-evenly;
+     color: white;
+     background-color: #4e3d8bc4;
+     font-weight: bold;
+     transition: 0.3s linear ease-in;
+     font-size: 23px;
+     margin-top: 10px;
+     margin-left: 350%;
+     border-radius: 4px solid black;
+     border-radius: 10px;
+     border: 3px solid #201f2f;
+ }
+
+
+ .coinName {
+     font-family: 'NHaasGroteskDSPro-65Md';
+     margin-top: 3px !important;
+     margin-bottom: 0px !important;
+     font-size: 3rem;
+     color: aqua;
+ }
+
+
+ .market-cards {
+     margin-left: -13px;
+     margin-bottom: 0rem;
+     margin-top: 2px !important;
+     display: inline-flex;
+ }
+
+ .market-cards .card {
+     color: white;
+     text-align: center;
+     margin: 1.5rem;
+     border: 4px solid darkorange;
+     width: 10rem;
+     border-radius: 20px;
+     border-top-left-radius: 1px;
+     border-bottom-right-radius: 1px;
+ }
+
+ .market-cards .card-title {
+     font-family: 'NHaasGroteskDSPro-65Md';
+     font-weight: bold;
+     font-size: 15px;
+     width: 150px;
+     margin-bottom: -8px;
+ }
+
+ .market-cards .card-text {
+     font-weight: bold;
+     font-size: 20px;
+     color: aqua;
+ }
+
+ .market-cards .card-high {
+     font-weight: bold;
+     color: rgb(16, 201, 16);
+     font-size: 20px;
+
+ }
+
+ .market-cards .card-low {
+
+     font-weight: bold;
+     color: rgb(240, 98, 15);
+     font-size: 20px;
+ }
+
+ .market-price {
+     color: white;
+     text-align: center;
+     font-family: 'NHaasGroteskDSPro-65Md';
+     overflow: visible;
+     font-weight: bold;
+     height: 2px;
+     margin-top: 1%;
+ }
+
+ .price {
+     font-family: 'NHaasGroteskDSPro-65Md';
+     font-size: 90px;
+     font-weight: 700;
+     color: rgb(0, 255, 255);
+     text-decoration: none solid rgb(255, 255, 255);
+     text-align: center;
+ }
+
+ .col {
+
+     padding-right: 70px;
+ }
+
+ #chart1 {
+     max-width: 610px;
+     background: #21217321 none repeat scroll 0% 0%;
+ }
+
+ .col .card-title {
+     font-family: cursive;
+     font-weight: bold;
+     color: aquamarine;
+     font-size: 13px;
+     width: 200px;
+     margin-top: 47px;
+ }
+
+ .col .card-text {
+     font-family: 'NHaasGroteskDSPro-65Md';
+     color: rgb(255, 255, 255);
+     font-size: medium;
+     margin-top: -29px;
+     width: 175px;
+ }
+
+ .col #chart2 {
+     max-width: 310px;
+     background: #8a257624 none repeat scroll 0% 0%;
+ }
+
+ .col #chart3 {
+     max-width: 310px;
+     background: #7d2a2a38 none repeat scroll 0% 0%;
+ }
+
+ .container {
+     display: inline-flex;
+ }
+
+ .container .card-body {
+     max-width: 200px;
+     padding-left: 50px;
+     padding-right: 100px;
+     margin-top: -10px;
+ }
+
+ .c2 {
+     background-color: #08051469;
+     padding-left: 125px;
+ }
