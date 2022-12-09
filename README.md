@@ -2,7 +2,6 @@ Project - CryptoDash DashBoard
 
 
 
-Link to the Project :- https://cyrptodash-project.herokuapp.com/
 
 
 
